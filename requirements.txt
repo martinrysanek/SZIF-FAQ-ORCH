@@ -1,0 +1,5 @@
+Flask
+ibm_watson
+ibm-cloud-sdk-core
+pandas
+cloudant
