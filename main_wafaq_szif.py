@@ -142,7 +142,7 @@ class SelectionLoggerClass:
         new_selection = {
             "datetime_str": current_datetime_str,
             "datetime_iso": current_datetime.isoformat(),
-            "datetime_int": current_datetime.timestamp(),
+            "datetime_float": current_datetime.timestamp(),
             "query": query,
             "selected_faq": selected_faq,
             "selected_conf": selected_conf,
