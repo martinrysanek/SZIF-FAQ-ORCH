@@ -141,7 +141,7 @@ class SelectionLoggerClass:
         # Create a new document
         new_selection = {
             "datetime_str": current_datetime_str,
-            "datetime": current_datetime,
+            "datetime_iso": current_datetime.isoformat(),
             "query": query,
             "selected_faq": selected_faq,
             "selected_conf": selected_conf,
