@@ -436,14 +436,14 @@ logger.info(
 # Get the PORT from environment
 port = os.getenv('PORT', '8080')
 # Get authenticate key
-api_key = os.getenv('API_KEY', 'None')
-logger.debug("API_KEY = " + api_key)
+api_key = os.getenv('WA_API_KEY', 'None')
+logger.debug("WA_API_KEY = " + api_key)
 # Get authenticate url
 wa_url = os.getenv('WA_URL', 'None')
 logger.debug("WA_URL = " + wa_url)
 # Get assistant_id
-assistant_id = os.getenv('ASSISTANT_ID', 'None')
-logger.debug("ASSISTANT_ID = " + assistant_id)
+assistant_id = os.getenv('WA_ASSISTANT_ID', 'None')
+logger.debug("WA_ASSISTANT_ID = " + assistant_id)
 # Max Returned Intents
 max_intents_str = os.getenv('MAX_INTENTS', '5')
 max_intents = int(max_intents_str)
@@ -458,7 +458,7 @@ logger.debug("CLOUDANT_URL = " + str(cloudant_url))
 cloudant_apikey = os.getenv('CLOUDANT_APIKEY', 'None')
 logger.debug("CLOUDANT_APIKEY = " + str(cloudant_apikey))
 cloudant_dbname = os.getenv('CLOUDANT_DB', 'SELECTION')
-logger.debug("CLOUDANT_APIKEY = " + str(cloudant_apikey))
+logger.debug("CLOUDANT_DB = " + str(cloudant_dbname))
 
 cloudant_client = None
 cloudant_db = None
