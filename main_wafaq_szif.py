@@ -68,7 +68,7 @@ config_form_end = """>
 </form>
 """
 
-MAXIMUM_LOG_ROWS = 30
+MAXIMUM_LOG_ROWS = 120
 
 class LoggerClass:
     def __init__(self, name):
