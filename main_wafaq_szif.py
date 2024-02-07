@@ -68,7 +68,7 @@ config_form_end = """>
 </form>
 """
 
-MAXIMUM_LOG_ROWS = 250
+MAXIMUM_LOG_ROWS = 100
 
 class LoggerClass:
     def __init__(self, name):
@@ -134,11 +134,11 @@ class SelectionLoggerClass:
             # test existing connection cloudant_client
             metadata = cloudant_client.metadata()
         except Exception as e:
-            client = Cloudant.iam(None, cloudant_apikey,
+            cloudant_client = Cloudant.iam(None, cloudant_apikey,
                                   url=cloudant_url, connect=True)
             logger.info("New cloudant connection created")
             # Get a reference to the database
-            cloudant_db = client[cloudant_dbname]
+            cloudant_db = cloudant_client[cloudant_dbname]
 
         # Create a new document
         new_selection = {
