@@ -81,7 +81,7 @@ class LoggerClass:
         current_datetime_str = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
         self.log.loc[len(self.log.index)] = [
             current_datetime_str, level, message, indent]
-        self.log = self.log.head(MAXIMUM_LOG_ROWS)
+        self.log = self.log.tail(MAXIMUM_LOG_ROWS).reset_index(drop=True)
 
     def info(self, message, indent=0):
         self.add_row("info", message, indent + 1)
@@ -129,7 +129,7 @@ class SelectionLoggerClass:
         current_datetime_str = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
         self.log.loc[len(self.log.index)] = [current_datetime_str,
                                              query, selected_faq, selected_conf, top_faq, top_conf, ranking]
-        self.log = self.log.head(MAXIMUM_LOG_ROWS)
+        self.log = self.log.tail(MAXIMUM_LOG_ROWS).reset_index(drop=True)
         try:
             # test existing connection cloudant_client
             metadata = cloudant_client.metadata()
